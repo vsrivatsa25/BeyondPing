@@ -68,7 +68,7 @@ def multiprocessing_func(i):
                 except TypeError or IndexError:
                      pass
         return lines[i]
-    except OSError or AttributeError or GeocoderTimedOut:
+    except:
         lines[i][10] = '-'
         return lines[i]
 
