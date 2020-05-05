@@ -10,10 +10,6 @@ import pandas as pd
 df_csv = pd.read_csv('nameservers.csv', encoding='latin-1', engine='python')
 lines = [list(x) for x in df_csv.values]
 
-#keys for geocoder api
-keylist=['manny','administrator','network','coder','jaes','roy1','royal','alice',
-         'twitter','client','meme','vega','sony','example']
-
 #function to pick color from gradient based on latency
 def colorpicker(latency):
     if latency<=15:
@@ -46,7 +42,8 @@ def osping(ip):
 #function to get coordinates of a city of DNS server
 def getcoordinates(loc):
     try:
-        g = geocoder.geonames(loc, key=random.choice(keylist))
+        g = geocoder.geonames(loc, key="KEY")
+        #replace KEY with your geonames api key. Register at https://www.geonames.org/
         longitude = g.lng
         latitude = g.lat
         return (float(longitude),float(latitude))
@@ -131,5 +128,8 @@ if __name__ == '__main__':
     print("Map Closed...")
 
     # Created by : Vrishab V Srivatsa
-    # Credits : Geocoder API, https://public-dns.info ,
-
+    # Credits : Geocoder API, https://public-dns.info 
+    # Inspired by a Cloudflare internship application task
+    # Please credit if used for your personal/academic uses
+    # Twitter: @vsrivatsa25 https://twitter.com/vsrivatsa25?lang=da
+    # Instagram: @vsrivatsa25 https://www.instagram.com/vsrivatsa25/?hl=en
