@@ -12,7 +12,7 @@ geographiclib==1.50
 kiwisolver==1.2.0
 matplotlib==3.2.1
 
-numpy==1.18.3
+numpy==1.22.0
 pandas==1.0.3
 Pillow==8.1.1
 pycos==4.8.15
